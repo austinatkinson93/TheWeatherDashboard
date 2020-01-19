@@ -1,10 +1,34 @@
 // variables
 var searchEl = $("#input")
 var searchBtn = $(".btn")
-var searchs = []
+var searches = []
 
 
+
+
+
+// functions
+function loadSearches (){
+   var savedSearches = localStorage.getItem("pastSearches")
+   $(savedSearches).each(function(){
+        
+   })
+}
+
+
+
+
+
+
+
+
+
+// Event listeners
 $(searchBtn).click(function(){
-    searchs.push(searchEl.val())
-    localStorage.setItem("pastSearches", JSON.stringify(searchs))
+    searches.push(searchEl.val())
+    localStorage.setItem("pastSearches", JSON.stringify(searches))
 })
+
+
+// function calls
+loadSearches()
